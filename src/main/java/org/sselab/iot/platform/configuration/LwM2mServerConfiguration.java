@@ -16,6 +16,7 @@ public class LwM2mServerConfiguration {
   public LwM2mServer initLwM2mServer() {
     val builder = new LeshanServerBuilder();
     val server = builder.build();
+
     server.getRegistrationService().addListener(new DatabaseRegistrationListener());
     logger.info("Initialized LwM2mServer {}", server);
     return server;
